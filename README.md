@@ -1,27 +1,49 @@
-# AngularReactiveForms
+# Angular Reactive Forms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+Angular Udemy Course Test Bench for the Reactive Forms Section
 
-## Development server
+## Summary
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Built With](#built-with)
+- [Subjects Demonstrated](#subjects-demonstrated)
+- [Deployment](#deployment)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
 
-## Code scaffolding
+## Built With
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Angular](https://angular.io/) - Framework
+- [Angular CLI](https://cli.angular.io/) - Command Line Interface.
+- [Bootstrap](https://getbootstrap.com/)
 
-## Build
+## Subjects Demonstrated
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Includes the following topics related to Angular Reactive Forms utilizing Bootstrap.
 
-## Running unit tests
+- Building a Bootstrap Form
+- Creating Controls Programmatically
+- Adding Validation
+- Specific Validation Errors
+- Implementing Custom Validation
+- Asynchronous Operations
+- Asynchronous Validation
+- Showing a Loader Image
+- Validating the Form Upon Submit
+- Nested FormGroups
+- FormArray
+- FormBuilder
+- Quick Recap
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Deployment
 
-## Running end-to-end tests
+- Hosted on [Netlify](https://app.netlify.com/) utilizing [GitHub](https://app.netlify.com/)'s Netlify App
+- URL [https://angular-reactive-forms.netlify.app](https://angular-reactive-forms.netlify.app)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Authors
 
-## Further help
+- **Curt Grogan** - _Full Stack Web Developer_ -
+  [Curt Grogan](https://github.com/clgrogan)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Acknowledgments
+
+- **Udemy - Angular Crash Course for Busy Developers** - _Provided the bulk of the knowhow on how to work with Angular_ [Udemy](https://www.udemy.com/)
