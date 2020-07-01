@@ -3,11 +3,11 @@ import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 import { SignupFormComponent } from "./signup-form/signup-form.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent, SignupFormComponent],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
