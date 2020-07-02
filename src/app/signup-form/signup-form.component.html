@@ -7,6 +7,26 @@
       type="text"
       class="form-control"
     />
+    <section
+      *ngIf="deForm.get('username').touched && deForm.get('username').invalid"
+      class="alert alert-danger"
+    >
+      The username is required.
+      <div class="alert alert-warning">
+        A bit verbose using *ngIf: <br />
+        "deForm.get('username').touched && deForm.get('username').invalid"
+      </div>
+    </section>
+    <section
+      *ngIf="username.touched && username.invalid"
+      class="alert alert-warning"
+    >
+      The username is required.
+      <div class="alert alert-success">
+        Cleaned up using a property in the component & *ngIf:<br />
+        username.touched && username.invalid"
+      </div>
+    </section>
   </div>
   <div class="form-group">
     <label for="password">Password</label>
@@ -16,6 +36,18 @@
       type="text"
       class="form-control"
     />
+    <section
+      *ngIf="username.valid && password.invalid"
+      class="alert alert-danger"
+    >
+      The password is required.
+
+      <div class="alert alert-success">
+        This message uses cleaner code utilizing a property in the component &
+        *ngIf:<br />
+        username.valid && password.invalid"
+      </div>
+    </section>
   </div>
   <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>

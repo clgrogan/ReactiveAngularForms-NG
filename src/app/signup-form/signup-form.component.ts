@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: "signup-form",
@@ -8,7 +8,14 @@ import { FormGroup, FormControl } from "@angular/forms";
 })
 export class SignupFormComponent {
   deForm = new FormGroup({
-    username: new FormControl(),
-    password: new FormControl(),
+    username: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required),
   });
+  // We can create properties for the class instance to give access to the form control object properties and their attributes/methods
+  get username() {
+    return this.deForm.get("username");
+  }
+  get password() {
+    return this.deForm.get("password");
+  }
 }
