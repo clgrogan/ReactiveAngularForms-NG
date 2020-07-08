@@ -9,4 +9,18 @@ export class UsernameValidators {
       return null;
     }
   }
+
+  static shouldBeUnique(
+    control: AbstractControl
+  ): Promise<ValidationErrors | null> {
+    // implement a simple rule and emulate a call to the
+    // server by setting timer.
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("Timeout Expired. {control.value}=", control.value);
+        if (control.value === "curt") resolve({ shouldBeUnique: true });
+        else resolve(null);
+      }, 5555);
+    });
+  }
 }

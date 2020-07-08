@@ -40,6 +40,9 @@
       <li *ngIf="username.errors.cannotContainSpace">
         Username field cannot contain any spaces.
       </li>
+      <li *ngIf="username.errors.shouldBeUnique">
+        Username field is taken. Select another name.
+      </li>
       Hurray for specificity. We are cooking with gas now!
     </ul>
   </div>
