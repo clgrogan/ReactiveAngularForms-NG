@@ -1,71 +1,56 @@
 <section class="alert alert-dark">
   <h3 class="text-center text-muted">Login Reactive Form</h3>
-  <form [formGroup]="deForm">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input
-        formControlName="username"
-        id="username"
-        type="text"
-        class="form-control"
-      />
-      <section class="loading" *ngIf="username.pending">
-        <div class="spinner-border text-secondary" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-        <div class="alert alert-dark">
-          Checking username availability....
-          <div class="progress">
-            <div
-              class="progress-bar progress-bar-striped bg-dark progress-bar-animated text-info"
-              role="progressbar"
-              style="width: 100%;"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              color="gray"
-            >
-              bootstrap progress-bar
+  <form [formGroup]="deForm" (ngSubmit)="login()">
+    <div class="alert alert-warning" *ngIf="deForm.errors">
+      <p class="alert" *ngIf="deForm.errors.invalidLogin">
+        The username or password is invalid.
+      </p>
+    </div>
+    <div formGroupName="account">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          formControlName="username"
+          id="username"
+          type="text"
+          class="form-control"
+        />
+        <section class="loading" *ngIf="username.pending">
+          <div class="alert alert-dark">
+            Checking username availability....
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-dark progress-bar-animated text-info"
+                role="progressbar"
+                style="width: 100%;"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                color="gray"
+              >
+                bootstrap progress-bar
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section
-        *ngIf="deForm.get('username').touched && deForm.get('username').invalid"
-        class="alert alert-danger"
-      >
-        The username is invalid. Well now, this is a rather generic message.
-        <div class="alert alert-warning">
-          A bit verbose using *ngIf: <br />
-          "deForm.get('username').touched && deForm.get('username').invalid"
-        </div>
-      </section>
-      <section
-        *ngIf="username.touched && username.invalid"
-        class="alert alert-warning"
-      >
-        The username is invalid. Well now, this is a rather generic message.
-        <div class="alert alert-success">
-          Cleaned up using a property in the component & *ngIf:<br />
-          username.touched && username.invalid"
-        </div>
-      </section>
-
-      <ul *ngIf="username.touched && username.invalid" class="alert alert-dark">
-        <li *ngIf="username.errors.required">
-          Username field is required, but it is not populated.
-        </li>
-        <li *ngIf="username.errors.minlength">
-          Username minimum length of
-          {{ username.errors.minlength.requiredLength }} characters has not been
-          met.
-        </li>
-        <li *ngIf="username.errors.mustBeUnique">
-          Username '{{ username.value.toLowerCase() }}' is taken. Select another
-          username.
-        </li>
-        Hurray for specificity. We are cooking with gas now!
-      </ul>
+        </section>
+        <ul
+          *ngIf="username.touched && username.invalid"
+          class="alert alert-dark"
+        >
+          <li *ngIf="username.errors.required">
+            Username field is required, but it is not populated.
+          </li>
+          <li *ngIf="username.errors.minlength">
+            Username minimum length of
+            {{ username.errors.minlength.requiredLength }} characters has not
+            been met.
+          </li>
+          <li *ngIf="username.errors.mustBeUnique">
+            Username '{{ username.value.toLowerCase() }}' is taken. Select
+            another username.
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
@@ -80,15 +65,13 @@
         class="alert alert-danger"
       >
         The password is required.
-
-        <div class="alert alert-success">
-          This message demonstrates the use of cleaner code utilizing properties
-          in the component & *ngIf:<br />
-          username.valid && password.invalid"
-        </div>
       </section>
     </div>
-    <button class="btn btn-outline-info btn-light" type="submit">
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="username.invalid || password.invalid"
+    >
       Login
     </button>
   </form>
