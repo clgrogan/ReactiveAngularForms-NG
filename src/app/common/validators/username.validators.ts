@@ -10,6 +10,20 @@ export class UsernameValidators {
     }
   }
 
+  static mustBeUnique(
+    control: AbstractControl
+  ): Promise<ValidationErrors | null> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if ((control.value as string).toLowerCase() === "curt") {
+          resolve({ mustBeUnique: true });
+        } else {
+          resolve(null);
+        }
+      }, 2222);
+    });
+  }
+
   static shouldBeUnique(
     control: AbstractControl
   ): Promise<ValidationErrors | null> {

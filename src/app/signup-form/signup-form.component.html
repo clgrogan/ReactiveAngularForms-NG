@@ -37,11 +37,9 @@
         {{ username.errors.minlength.requiredLength }} characters has not been
         met.
       </li>
-      <li *ngIf="username.errors.cannotContainSpace">
-        Username field cannot contain any spaces.
-      </li>
-      <li *ngIf="username.errors.shouldBeUnique">
-        Username field is taken. Select another name.
+      <li *ngIf="username.errors.mustBeUnique">
+        Username '{{ username.value.toLowerCase() }}' is taken. Select another
+        username.
       </li>
       Hurray for specificity. We are cooking with gas now!
     </ul>
