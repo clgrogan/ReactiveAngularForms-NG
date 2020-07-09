@@ -7,6 +7,20 @@
       type="text"
       class="form-control"
     />
+    <div class="alert alert-dark" *ngIf="username.pending">
+      Checking username availability....
+      <div class="progress">
+        <div
+          class="progress-bar progress-bar-striped bg-dark progress-bar-animated"
+          role="progressbar"
+          style="width: 100%;"
+          aria-valuenow="100"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          color="gray"
+        ></div>
+      </div>
+    </div>
     <section
       *ngIf="deForm.get('username').touched && deForm.get('username').invalid"
       class="alert alert-danger"
@@ -53,7 +67,7 @@
       class="form-control"
     />
     <section
-      *ngIf="username.valid && password.invalid"
+      *ngIf="username.valid && password.touched && password.invalid"
       class="alert alert-danger"
     >
       The password is required.

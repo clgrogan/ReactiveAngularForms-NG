@@ -20,7 +20,7 @@ export class UsernameValidators {
         } else {
           resolve(null);
         }
-      }, 2222);
+      }, 3000);
     });
   }
 
