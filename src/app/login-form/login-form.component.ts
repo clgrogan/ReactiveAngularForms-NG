@@ -3,10 +3,10 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { UsernameValidators } from "../common/validators/username.validators";
 
 @Component({
-  selector: "signup-form",
-  templateUrl: "./signup-form.component.html",
+  selector: "login-form",
+  templateUrl: "./login-form.component.html",
 })
-export class SignupFormComponent {
+export class LoginFormComponent {
   deForm = new FormGroup({
     username: new FormControl(
       "",
