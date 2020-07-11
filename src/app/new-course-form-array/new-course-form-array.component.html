@@ -1,0 +1,19 @@
+<section class="alert alert-warning">
+  <h3 class="text-center">Add New Course - FormArray</h3>
+  <input
+    class="form input"
+    type="text"
+    (keyup.enter)="addTopic(topic)"
+    #topic
+  />
+  <ul class="list-group">
+    <li
+      *ngFor="let topic of topics.controls"
+      (click)="removeTopic(topic)"
+      class="list-group-item"
+    >
+      {{ topic.value }}
+      <!-- //use interpolation to render the topic value. -->
+    </li>
+  </ul>
+</section>
